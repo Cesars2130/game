@@ -1,0 +1,18 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "homepage": "https://Cesars2130.github.io/game",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy":"gh-pages -d ."
+  },
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}
