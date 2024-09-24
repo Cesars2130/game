@@ -62,7 +62,7 @@ const Game = {
   mines: [
     { x: 100, y: 100, size: 90, hasGold: true },
     { x: 200, y: 400, size: 90, hasGold: true },
-    { x: 400, y: 150, size: 90, hasGold: true },
+    { x: 400, y: 150, size: 90, hasGold: true },S
   ],
   score: 11110,
   minionCount: 0,
