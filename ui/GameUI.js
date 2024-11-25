@@ -5,6 +5,11 @@ const GameUI = {
     document.getElementById("buyMinionButton").addEventListener("click", () => {
       GameController.addMinion();
     });
+
+    document.getElementById("buyClickerButton").addEventListener("click", () => {
+      GameController.addClicker();
+    });
+
   },
 
   startGame: function () {

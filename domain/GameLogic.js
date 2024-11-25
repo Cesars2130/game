@@ -1,4 +1,6 @@
 import Minion from './entities/Minion.js';
+import Clicker from './entities/Clicker.js';
+import SpikeBall from './entities/SpikeBall.js';
 
 const GameLogic = {
   createMinion(x, y, size, speed, assignedMine, base) {
@@ -36,7 +38,38 @@ const GameLogic = {
         console.log('Minion ha entregado oro. Oro actualizado.');
       }
     }
-  }
+  },
+
+  createClicker(canvasWidth, canvasHeight) {
+    const x = Math.random() * (canvasWidth - 40);
+    const y = Math.random() * (canvasHeight - 40);
+    return new Clicker(x, y, 15);
+  },
+
+  updateClicker(clicker, deltaTime) {
+    if (clicker.clicks > 0) {
+      clicker.currentTime += deltaTime;
+      if (clicker.currentTime >= clicker.clickInterval) {
+        clicker.clicks--;
+        clicker.currentTime = 0;
+        return true;
+      }
+    }
+    return false;
+  },
+
+  createSpikeBall(canvasWidth, canvasHeight) {
+    return new SpikeBall(canvasWidth, canvasHeight);
+  },
+
+  updateSpikeBall(spikeBall, spikeBallData) {
+    Object.assign(spikeBall, spikeBallData); // Actualiza los datos de la bola
+  },
+
+  getRandomSpawnTime() {
+    return Math.random() * 5000 + 10000; // Tiempo entre 10 y 15 segundos
+  },
+
 };
 
 export default GameLogic;
